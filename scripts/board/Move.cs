@@ -1,15 +1,15 @@
 using Godot;
-using System;
 
-public partial class Move : Node
+namespace Chess.Board;
+
+public readonly struct Move
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+	public Vector2I From { get; }
+	public Vector2I To { get; }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public Move(Vector2I from, Vector2I to)
 	{
+		From = from;
+		To = to;
 	}
 }

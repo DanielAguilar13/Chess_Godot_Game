@@ -1,15 +1,16 @@
 using Godot;
-using System;
+using Chess.Board;
 
-public partial class Piece : Node
+namespace Chess.SceneBoard;
+
+public partial class Piece : Node2D
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+	[Export] public PieceType Type { get; set; }
+	[Export] public PieceColor Color { get; set; }
+	[Export] public int Id { get; set; }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+	public Vector2I Cell { get; set; }
+
+	public void SetTexture(Texture2D tex)
+		=> GetNode<Sprite2D>("Sprite2D").Texture = tex;
 }

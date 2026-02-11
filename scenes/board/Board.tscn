@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://bhyhpdrjs51hw"]
 
 [ext_resource type="Script" uid="uid://d20kf4xfhamft" path="res://scripts/board/Board.cs" id="1_6puts"]
+[ext_resource type="Texture2D" uid="uid://hdhbodogedix" path="res://assets/board.png" id="2_4vko3"]
+[ext_resource type="PackedScene" uid="uid://c5jqkwmkb5v10" path="res://scenes/board/Piece.tscn" id="3_kmmm1"]
 
 [node name="Board" type="Node2D" unique_id=708952462]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=700709979]
 script = ExtResource("1_6puts")
+PieceScene = ExtResource("3_kmmm1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=2134033690]
+position = Vector2(627, 403)
+texture = ExtResource("2_4vko3")

@@ -1,15 +1,18 @@
-using Godot;
-using System;
+namespace Chess.Board;
 
-public partial class PieceData : Node
+public enum PieceType { King, Queen, Rook, Bishop, Knight, Pawn }
+public enum PieceColor { White, Black }
+
+public readonly struct PieceData
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+	public PieceType Type { get; }
+	public PieceColor Color { get; }
+	public int Id { get; } // útil en red
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public PieceData(PieceType type, PieceColor color, int id)
 	{
+		Type = type;
+		Color = color;
+		Id = id;
 	}
 }
